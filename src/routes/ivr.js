@@ -11,9 +11,9 @@ const VoiceResponse = twilio.twiml.VoiceResponse;
 const MENU_TEXT =
   `Merhaba, şu an telefonlara bakamıyorum.
   Borç isteyecekseniz 1'i,
-  hal hatır soracaksanız 2'yi,
+  hâl hatır soracaksanız 2'yi,
   proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü,
-  halı sahaya adam lazımsa 4'ü,
+  halı sahaya adam lâzımsa 4'ü,
   fizik sorunuz varsa 5'i,
   sıkıldıysanız 6'yı,
   tekrar dinlemek için yıldızı tuşlayın.`;
@@ -61,7 +61,7 @@ router.post('/gather-result', async (req, res) => {
     },
     '2': {
       telegram: `👋 ${from} hal hatır sormak için aradı.`,
-      hangup: "Selamınız iletildi, kendisi de size selam ediyor. Hoşça kalın.",
+      hangup: "Selâmınız iletildi, kendisi de size selâm ediyor. Hoşça kalın.",
     },
     '3': {
       telegram: `💻 ${from} yeni bir uygulama fikriyle geliyor, dikkatli ol.`,
@@ -69,11 +69,11 @@ router.post('/gather-result', async (req, res) => {
     },
     '4': {
       telegram: `⚽️ ${from} halı sahaya adam arıyor çok acil.`,
-      hangup: "Kramponlarını temizleyip size dönüş yapacağız. Halı sahada size iyi eğlenceler!",
+      hangup: "Krampon temizliği sonrası size dönüş yapacağız. İyi eğlenceler!",
     },
     '5': {
       telegram: `🔍 ${from} fizik sorusu var, Yakup'a yönlendirildi.`,
-      hangup: "O zaman Yakup'u arasanıza ben ne alaka? İyi günler.",
+      hangup: "O zaman Yâkup'u arasanıza! Ben ne alâka? İyi günler.",
     },
     '6': {
       telegram: `😴 ${from} sıkıldı, telefon suratına kapatıldı.`,
