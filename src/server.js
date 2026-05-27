@@ -2,6 +2,7 @@
 const express = require('express');
 const config = require('./config');
 const ivrRoutes = require('./routes/ivr');
+const { version } = require('../package.json');
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Basit sağlık kontrolü
-app.get('/', (_req, res) => res.send('IVR ayakta 🎙️'));
+app.get('/', (_req, res) => res.send(`IVR ayakta 🎙️ — v${version}`));
 
 // IVR rotaları (/incoming-call, /gather-result)
 app.use('/', ivrRoutes);
