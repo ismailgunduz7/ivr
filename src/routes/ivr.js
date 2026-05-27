@@ -13,7 +13,7 @@ const MENU_TEXT =
   Borç isteyecekseniz 1'i,
   hâl hatır soracaksanız 2'yi,
   proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü,
-  halı sahaya adam lâzımsa 4'ü,
+  halı sahaya adam laazımsa 4'ü,
   fizik sorunuz varsa 5'i,
   sıkıldıysanız 6'yı,
   tekrar dinlemek için yıldızı tuşlayın.`;
@@ -61,7 +61,7 @@ router.post('/gather-result', async (req, res) => {
     },
     '2': {
       telegram: `👋 ${from} hal hatır sormak için aradı.`,
-      hangup: "Selâmınız iletildi, kendisi de size selâm ediyor. Hoşça kalın.",
+      hangup: "Selaamınız iletildi, kendisi de size selaam ediyor. Hoşça kalın.",
     },
     '3': {
       telegram: `💻 ${from} yeni bir uygulama fikriyle geliyor, dikkatli ol.`,
@@ -73,7 +73,7 @@ router.post('/gather-result', async (req, res) => {
     },
     '5': {
       telegram: `🔍 ${from} fizik sorusu var, Yakup'a yönlendirildi.`,
-      hangup: "O zaman Yâkup'u arasanıza! Ben ne alâka? İyi günler.",
+      hangup: "O zaman Yaakup'u arasanıza! Ben ne alaaka? İyi günler.",
     },
     '6': {
       telegram: `😴 ${from} sıkıldı, telefon suratına kapatıldı.`,
