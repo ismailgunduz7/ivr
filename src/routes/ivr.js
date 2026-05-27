@@ -9,14 +9,14 @@ const VoiceResponse = twilio.twiml.VoiceResponse;
 
 // Ana menü metni - hem ilk girişte hem geçersiz tuşta tekrar edilecek
 const MENU_TEXT =
-  `Merhaba, şu an telefonlara bakamıyorum.
-  Borç isteyecekseniz 1'i,
-  hal hatır soracaksanız 2'yi,
-  proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü,
-  halı sahaya adam lazımsa 4'ü,
-  fizik sorunuz varsa 5'i,
-  sıkıldıysanız 6'yı,
-  tekrar dinlemek için yıldızı tuşlayın.`;
+  "Merhaba, şu an telefonlara bakamıyorum." +
+  "Borç isteyecekseniz 1'i," +
+  "hal hatır soracaksanız 2'yi," +
+  "proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü," +
+  "halı sahaya adam lazımsa 4'ü," +
+  "fizik sorunuz varsa 5'i," +
+  "sıkıldıysanız 6'yı," +
+  "tekrar dinlemek için yıldızı tuşlayın.";
 
 // Menüyü <Gather> içinde okuyan yardımcı: tuşlama olmazsa otomatik tekrar eder
 function buildMenu(twiml) {
