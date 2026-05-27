@@ -9,11 +9,14 @@ const VoiceResponse = twilio.twiml.VoiceResponse;
 
 // Ana menü metni - hem ilk girişte hem geçersiz tuşta tekrar edilecek
 const MENU_TEXT =
-  "Merhaba, şu an telefonlara bakamıyorum. " +
-  "Borç isteyecekseniz 1'i, " +
-  "hal hatır soracaksanız 2'yi, " +
-  "proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü, " +
-  "halı sahaya adam lazımsa 4'ü tuşlayın.";
+  `Merhaba, şu an telefonlara bakamıyorum.
+  Borç isteyecekseniz 1'i,
+  hal hatır soracaksanız 2'yi,
+  proje fikriniz için uygulama geliştirmemi isteyecekseniz 3'ü,
+  halı sahaya adam lazımsa 4'ü,
+  fizik sorunuz varsa 5'i,
+  sıkıldıysanız 6'yı,
+  tekrar dinlemek için yıldızı tuşlayın.`;
 
 // Menüyü <Gather> içinde okuyan yardımcı: tuşlama olmazsa otomatik tekrar eder
 function buildMenu(twiml) {
@@ -68,9 +71,22 @@ router.post('/gather-result', async (req, res) => {
       telegram: `⚽️ ${from} halı sahaya adam arıyor çok acil.`,
       hangup: "Kramponlarını temizleyip size dönüş yapacağız. Halı sahada size iyi eğlenceler!",
     },
+    '5': {
+      telegram: `🔍 ${from} fizik sorusu var, Yakup'a yönlendirildi.`,
+      hangup: "O zaman Yakup'u arasanıza ben ne alaka? İyi günler.",
+    },
+    '6': {
+      telegram: `😴 ${from} sıkıldı, telefon suratına kapatıldı.`,
+      hangup: "Aradığınız kişiye şu anda ulaşılamamaktadır. Lütfen daha sonra tekrar denemeyin.",
+    },
   };
 
   const handler = handlers[digit];
+
+  if (digit === '*') {
+    buildMenu(twiml);
+    return res.type('text/xml').send(twiml.toString());
+  }
 
   // Geçersiz tuş: menüyü baştan oku
   if (!handler) {

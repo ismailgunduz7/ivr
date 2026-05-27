@@ -14,7 +14,7 @@ const config = {
   // IVR seslendirme ayarları (Türkçe)
   voice: {
     language: 'tr-TR',
-    voice: 'Polly.Filiz', // Polly.Filiz / Polly.Burcu / alice
+    voice: 'Polly.Burcu', // Polly.Filiz / Polly.Burcu / alice
   },
 };
 
