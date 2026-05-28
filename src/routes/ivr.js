@@ -68,8 +68,8 @@ router.post('/gather-result', async (req, res) => {
       hangup: "Fikriniz kaydedildi, müsait olunca dönüş yapacağız. Bol şanslar.",
     },
     '4': {
-      telegram: `⚽️ ${from} halı sahaya adam arıyor çok acil.`,
-      hangup: "Krampon temizliği sonrası size dönüş yapacağız. İyi eğlenceler!",
+      telegram: `⚽️ ${from} halı sahaya adam arıyor. Şu sol dizini bi tamir ettir artık.`,
+      hangup: "Sol diz iç menisküs sakatlığı sebebiyle sezonu kapattık. Size iyi eğlenceler!",
     },
     '5': {
       telegram: `🔍 ${from} fizik sorusu var, Yakup'a yönlendirildi.`,
